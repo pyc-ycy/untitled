@@ -27,13 +27,12 @@
 
 - 2）Integer(String str)
 
-  ```java
-  //方法一是讲一个 int 型变量作为参数来构造对象
-  //方法二使用 String 型变量(必须为124这些数字字符）作为参数来构造对象
-  //例子：
+```java
+//方法一是讲一个 int 型变量作为参数来构造对象
+  //方法二使用 String 型变量(必须为124这些数字字符）作为参数来
   Integer number1 = new Integer(7);
   Integer number2 = new Integer("45");
-  ```
+```
 
 #### 1.2、常用方法
 
@@ -126,4 +125,35 @@ num2:5.69015
 num3:7.54
 num4:8.147
  */
+```
+#### 2.2、常用方法
+
+- Double 类的常用方法如下：
+
+| 方法                  | 返回值  | 功能描述                                                     |
+| :-------------------- | :-----: | :----------------------------------------------------------- |
+| valueOf(String s)     | Double  | 返回保存用参数字符串 str 表示的 double 值的 Double 对象      |
+| parseDouble(String s) | double  | 返回一个心得 double 值，该值被初始化为用指定的 String 表示的值，与 valueOf 相似。 |
+| doubleValue()         | double  | 以 double 形式返回此 Double 对象                             |
+| isNaN()               | boolean | 如果此 double 值是非数字（NaN）值，返回 True；否则返回 False |
+| intValue()            |   int   | 以 int 形式返回 double 值                                    |
+| byteValue()           |  byte   | 以 byte 形式返回 Double 对象值（通过强制转换）               |
+| longValue()           |  long   | 以 long 形式返回此 double 的值（通过强制转换为 long 类型）   |
+| compareTo(Double d)   |   int   | 对两个 Double 对象进行数值比较，如果相等则返回0，如果调用对象的值比 d 小，则返回负值，否则返回正值。 |
+| equals(Object obj)    | boolean | 将此对象与指定对象进行比较                                   |
+| toString()            | String  | 返回此 Double 对象的字符串表示形式                           |
+| toHexString(double d) | String  | 返回 Double 参数的十六进制字符串表现形式                     |
+
+- 例子：
+
+```java
+public class useDouble {
+    public static void main(String[] args) {
+        Double dNum = Double.valueOf("3.14159");  //通过构造函数创建一个 Double 对象
+        System.out.println("3.14159 是否为非数值："+Double.isNaN(dNum.doubleValue())); //判断是否为非数值
+        System.out.println("3.14159 的int值为"+dNum.intValue()); //转换为 int 类型数据
+        System.out.println("值为3.14 与 4.51的比较结果："+dNum.equals(4.51));
+        System.out.println("3.14159 的十六进制表示为："+Double.toHexString(dNum)); //转为十六进制
+    }
+}
 ```
