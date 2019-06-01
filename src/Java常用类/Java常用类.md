@@ -30,8 +30,13 @@
 ```java
 //方法一是讲一个 int 型变量作为参数来构造对象
   //方法二使用 String 型变量(必须为124这些数字字符）作为参数来
-  Integer number1 = new Integer(7);
-  Integer number2 = new Integer("45");
+  public class test{
+    public static main(){
+        Integer number1 = new Integer(7);
+        Integer number2 = new Integer("45");
+        System.out.println(number1+" "+number2);
+    }
+  }
 ```
 
 #### 1.2、常用方法
@@ -157,3 +162,97 @@ public class useDouble {
     }
 }
 ```
+#### 2.3、常量
+
+- Double 类提供了以下常量：
+
+  1）MAX_EXPONENT：返回 int 值，表示标准化 double 变量可能具有的最大指数。
+
+  2）MIN_EXPONENT：返回 int 值，表示标准化 double 变量可能具有的最小指数。
+
+  3）NEGATIVE_INFINITY：返回 double 值，表示保存 double 类型的负无穷大值的常量。
+
+  4）POSITIVE_INFINITY：返回 double 值，表示保存 double 类型的正无穷大值的常量。
+
+### 3、Boolean 类
+
+#### 3.1、构造方法
+
+- Boolean 类型的对象同样有两种构造方法：Boolean(boolean  value) 和 Boolean(String s)
+
+#### 3.2、常用方法
+
+- Boolean 类常用方法如下
+
+  | 方法                   | 返回值  | 功能描述                                                     |
+  | ---------------------- | ------- | ------------------------------------------------------------ |
+  | booleanValue()         | boolean | 将 Boolean 对象的值以对应的 boolean 值返回                   |
+  | equals(Object obj)     | boolean | 判断调用该方法的对象与 obj 是否相等，当且仅当参数不是 null，而且与调用该方法的对象一样都表示同一个boolean 值的 Boolean 对象时，才返回 Ture |
+  | parseBoolean(String s) | boolean | 将字符串参数解析为 boolean 值                                |
+  | toString()             | String  | 返回表示该 boolean 值的 String 对象                          |
+  | valueOf(String s)      | boolean | 返回一个用指定字符串表示值的 boolean 值。                    |
+
+- 示例：
+
+  ```java
+  public class GetBoolean {
+      public static void main(String[] args) {
+          Boolean b1 = new Boolean(true);  //创建Boolean 对象
+          Boolean b2 = new Boolean("ok"); //创建 Boolean 对象
+          System.out.println("b1:"+b1.booleanValue());
+          System.out.println("b2:"+b2.booleanValue());
+      }
+  }
+  ```
+
+#### 3.3、常量
+
+- Boolean 提供了以下三个常量
+
+  1）TRUE：对应基值 true 的 Boolean 对象
+
+  2）FALSE：对应基值 false 的 Boolean 对象
+
+  3）TYPE：基本类型 boolean 的 Class 对象。
+
+### 4、Character 类
+
+#### 4.1、构造方法
+
+- Character 类的构造方法只有一种：Character(char value)
+
+#### 4.2、常用方法
+
+- Character 类的常用方法如下表：
+
+  | 方法                                  | 返回值  | 功能描述                                               |
+  | ------------------------------------- | ------- | ------------------------------------------------------ |
+  | compareTo(Character anotherCharacter) | int     | 根据数字比较两个 Character 对象，若两个对象相等则返回0 |
+  | equals(Object obj)                    | Boolean | 将调用该方法的对象与指定对象进行比较                   |
+  | toUpperCase(char ch)                  | char    | 将字符参数转换为大写                                   |
+  | toLowerCase(char ch)                  | char    | 将字符参数转换为小写                                   |
+  | toString()                            | String  | 返回一个表示指定 char 值的 String 对象                 |
+  | charValue()                           | char    | 返回此 Character 对象的值                              |
+  | isUpperCase(char ch)                  | boolean | 判断指定字符是否是大写字符                             |
+  | isLowerCase(char ch)                  | boolean | 判断指定字符是否是小写字符                             |
+  | isLetter(char ch)                     | boolean | 判断指定字符是否为字母                                 |
+  | isDigit(char ch)                      | boolean | 判断指定字符是否为数字                                 |
+
+  ```java
+  public class UpperOrLower {
+      public static void main(String[] args) {
+          Character mychar1 = new Character('A');  //声明Character对象
+          Character mychar2 = new Character('a'); //声明Character对象
+          if(Character.isUpperCase(mychar1)){  //判断是否为大写字母
+              System.out.println(mychar1+"是大写字母");
+              System.out.println("转换小写字母的结果："+Character.toLowerCase(mychar1));  //转为小写字母
+          }
+          if(Character.isLowerCase(mychar2)){ //判断是否为小写
+              System.out.println(mychar2+"是小写字母");
+              System.out.println("转换为大写字母的结果是："+Character.toUpperCase(mychar2));
+          }
+      }
+  }
+  ```
+
+  
